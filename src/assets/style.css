@@ -1,0 +1,43 @@
+.page {
+    padding: 20px 30px;
+}
+
+.page-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.page-form__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.button {
+    display: block;
+    width: 200px;
+    margin-top: 20px;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 7px;
+    border: 1px solid rgb(100, 100, 100);
+    color: #000000;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: hsl(217, 64%, 20%);
+    background-color: hsl(0, 0%, 78%);
+}
+
+.button-recomended {
+    color: #ffffff;
+    background-color: #1b407d;
+    border: none;
+}
+
+.button-recomended:hover {
+    background-color: hsl(217, 64%, 20%);
+}

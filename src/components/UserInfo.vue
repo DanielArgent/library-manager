@@ -1,18 +1,16 @@
 <template>
   <div class="user-info">
-      <img class="user-info__avatar" v-bind:src="user.avatar" />
-      <span class="user-info__name">{{ user.name }}</span>
+      <img class="user-info__avatar" :src="currentUser.avatar" />
+      <span class="user-info__name">{{ currentUser.name }}</span>
   </div>
 </template>
 
 <script>
-import User from '@/data/User';
+import { mapGetters } from "vuex";
 
 export default {
   name: 'UserInfo',
-  props: {
-      user: User
-  }
+  computed: mapGetters(["currentUser"])
 }
 </script>
 
@@ -20,14 +18,13 @@ export default {
 .user-info {
     display: flex;
     align-items: center;
-
-    padding: 0px 20px;
+    padding: 0px 30px;
 }
 
 .user-info__avatar {
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 </style>

@@ -1,31 +1,26 @@
 <template>
   <header class="header">
     <div class="header__logo">LibraryManager</div>
-    
-    <user-info v-bind:user="user" />
 
-    <button class="header__sign-in">
-      <img src="@/assets/login.svg"/>
-    </button>
+    <user-info />
+
+    <router-link to="/autorization" class="header__autorize-link">
+      <img src="@/assets/autorization-icon.svg" />
+    </router-link>
   </header>
 </template>
 
 <script>
-import User from '@/data/User';
 import UserInfo from "@/components/UserInfo";
 
 export default {
-  name: 'Header',
-  props: {
-    user: User
-  },
+  name: "Header",
   components: {
-    UserInfo
-  }
-}
+    UserInfo,
+  },
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .header {
   display: flex;
@@ -40,13 +35,13 @@ export default {
   margin-right: auto;
 }
 
-.header__sign-in {
+.header__autorize-link {
   background-color: transparent;
   border: none;
 }
 
-.header__sign-in>img {
-  width: 24px;
-  height: 24px;
+.header__autorize-link > img {
+  width: 18px;
+  height: 18px;
 }
 </style>
