@@ -90,10 +90,11 @@ export function toIsbnDigits(isbn) {
 export function checksumIsbn10(digits) {
     let sum = 0;
     for (let i = 0; i < 9; i++) {
-        sum += (11 - i) * digits[i];
+        sum += (10 - i) * digits[i];
     }
 
-    return (11 - (sum % 11)) % 11;
+    const digit = (11 - (sum % 11)) % 11;
+    return digit === 10 ? "X" : digit;
 }
 
 /**
@@ -110,7 +111,7 @@ export function checksumIsbn13(digits) {
 
     let sum = 0;
     for (let i = 0; i < 12; i++) {
-        sum += factor(i) * digits[i];
+        sum += factor(i+1) * digits[i];
     }
 
     return (10 - (sum % 10)) % 10;
